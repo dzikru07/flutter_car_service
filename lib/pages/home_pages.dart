@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                 "Service List",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                    color: subText, fontSize: 12, fontWeight: FontWeight.w600),
+                    color: subText, fontSize: 16, fontWeight: FontWeight.w600),
               ),
               SizedBox(
                 height: 15,
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                 "Current promotions",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                    color: subText, fontSize: 12, fontWeight: FontWeight.w600),
+                    color: subText, fontSize: 16, fontWeight: FontWeight.w600),
               ),
               SizedBox(
                 height: 120,

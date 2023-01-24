@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_car_service/pages/home_pages.dart';
 import 'package:flutter_car_service/style/color.dart';
 
+import '../pages/service_form.dart';
+
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
 
@@ -12,13 +14,13 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int pageIndex = 0;
 
-  List pages = [HomePage(), HomePage(), HomePage()];
+  List pages = [HomePage(), ServiceFormPage(), HomePage()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      body: pages[0],
+      body: pages[pageIndex],
       bottomNavigationBar: Padding(
         padding: EdgeInsets.fromLTRB(20.0, 5, 20, 20),
         child: builMyNavBar(context),
