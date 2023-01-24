@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_car_service/models/last_service_models.dart';
+import 'package:flutter_car_service/data/articles_data.dart';
+import 'package:flutter_car_service/data/service.dart';
 import 'package:flutter_car_service/style/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -43,6 +44,95 @@ class _HomePageState extends State<HomePage> {
                 style: GoogleFonts.poppins(
                     color: subText, fontSize: 12, fontWeight: FontWeight.w600),
               ),
+              SizedBox(
+                height: 15,
+              ),
+              SizedBox(
+                height: 80,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: serviceData.length,
+                    itemBuilder: ((context, index) {
+                      return Container(
+                        padding: EdgeInsets.all(20),
+                        margin: EdgeInsets.only(right: 18),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: mainColor),
+                        child: Image.asset(
+                          serviceData[index].logo.toString(),
+                          height: 20,
+                          width: 40,
+                        ),
+                      );
+                    })),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Text(
+                "Current promotions",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.poppins(
+                    color: subText, fontSize: 12, fontWeight: FontWeight.w600),
+              ),
+              SizedBox(
+                height: 120,
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: articlesData.length,
+                    itemBuilder: ((context, index) {
+                      return Container(
+                        margin: EdgeInsets.only(right: 15),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 90,
+                              width: 90,
+                              margin: EdgeInsets.only(right: 8),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage(articlesData[index]
+                                          .image
+                                          .toString()))),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  articlesData[index].title.toString(),
+                                  style: GoogleFonts.poppins(
+                                      color: mainColor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w800),
+                                ),
+                                SizedBox(
+                                  width: 220,
+                                  child: Text(
+                                    articlesData[index].description.toString(),
+                                    textAlign: TextAlign.left,
+                                    maxLines: 4,
+                                    style: GoogleFonts.poppins(
+                                        color: subText,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      );
+                    })),
+              )
             ],
           ),
         ),
