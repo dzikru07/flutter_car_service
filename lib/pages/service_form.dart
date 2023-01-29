@@ -19,14 +19,12 @@ class _ServiceFormPageState extends State<ServiceFormPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    serviceDataForm = serviceData;
   }
 
   @override
   Widget build(BuildContext context) {
-    serviceDataForm = serviceData;
-
     return Scaffold(
         backgroundColor: bgColor,
         appBar: AppBar(
